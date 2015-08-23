@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class OrderedWord {
+public class OrderedWords {
     public static void main(String[] args){
         //input string
         String word = "";
@@ -22,11 +22,12 @@ public class OrderedWord {
             } else {
                 System.out.println("NOT IN ORDER");
             }
+            System.out.println();
         }
 
     }
 
-    private boolean isInOrder(String word){
+    private static boolean isInOrder(String word){
         //initial min value for 'a'
         int prev = 'a' - 1;
         for(int i = 0; i < word.length(); i++){
@@ -41,13 +42,13 @@ public class OrderedWord {
 
     }
 
-    private String getInput(Scanner stdin){
+    private static String getInput(Scanner stdin){
         //TODO handle invalid input (only ints or symbols)
         boolean valid = true;
         String w = "";
         do{
             System.out.println("Please enter a word.");
-            System.out.println("Please do not include numbers or symbols:");
+           //System.out.println("Please do not include numbers or symbols:");
             w = stdin.next();
             if(w.equals("q!")) System.exit(0);
         } while(!valid);
