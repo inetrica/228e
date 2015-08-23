@@ -47,10 +47,14 @@ public class OrderedWords {
         boolean valid = true;
         String w = "";
         do{
-            System.out.println("Please enter a word.");
-           //System.out.println("Please do not include numbers or symbols:");
+            valid = true;
+            System.out.println("Please enter a word:");
             w = stdin.next();
             if(w.equals("q!")) System.exit(0);
+            if(!w.matches("^[a-zA-Z]+$")){
+                valid = false;
+                System.out.println("Please do not include numbers or symbols.");
+            }
         } while(!valid);
         return w.toLowerCase();
     }
